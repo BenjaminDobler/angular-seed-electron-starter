@@ -31,6 +31,11 @@ export class HomeComponent implements OnInit {
     this.getNames();
   }
 
+  open() {
+    let w:any = window;
+    w.nodeRequire('electron').remote.dialog.showOpenDialog({properties: ['openFile', 'openDirectory', 'multiSelections']});
+  }
+
   /**
    * Handle the nameListService observable
    */
